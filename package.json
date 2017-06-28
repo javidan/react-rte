@@ -1,11 +1,12 @@
 {
   "name": "react-rte",
-  "version": "0.11.22",
+  "version": "0.11.23",
   "description": "React Rich Text Editor",
   "main": "dist/react-rte.js",
   "scripts": {
     "build": "npm run build-lib && npm run build-dist",
     "build-dist": "rimraf dist && webpack",
+    "build-prod": "rimraf dist && webpack --config webpack.config.prod.js",
     "build-lib": "rimraf lib && babel src --ignore \"_*\" --out-dir lib",
     "lint": "eslint --max-warnings 0 .",
     "typecheck": "flow",
