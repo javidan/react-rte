@@ -230,7 +230,7 @@ export default class EditorToolbar extends Component {
   _setLink(url: string) {
     let {editorState} = this.props;
     let selection = editorState.getSelection();
-    let entityKey = Entity.create(ENTITY_TYPE.LINK, 'MUTABLE', {url});
+    let entityKey = Entity.create(ENTITY_TYPE.LINK, 'MUTABLE', {url, target: '_blank' });
     this.setState({showLinkInput: false});
     this.props.onChange(
       RichUtils.toggleLink(editorState, selection, entityKey)
