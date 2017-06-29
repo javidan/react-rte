@@ -14210,9 +14210,14 @@ function(module, exports, __webpack_require__) {
                 });
             }
         }, {
-            key: "_setLink",
+            key: "_formatUrl",
             value: function(url) {
-                var editorState = this.props.editorState, selection = editorState.getSelection(), entityKey = _draftJs.Entity.create(_draftJsUtils.ENTITY_TYPE.LINK, "MUTABLE", {
+                return url.match(/http/g) ? url : "http://" + url;
+            }
+        }, {
+            key: "_setLink",
+            value: function(urlString) {
+                var url = this._formatUrl(urlString), editorState = this.props.editorState, selection = editorState.getSelection(), entityKey = _draftJs.Entity.create(_draftJsUtils.ENTITY_TYPE.LINK, "MUTABLE", {
                     url: url,
                     target: "_blank"
                 });
@@ -15095,7 +15100,6 @@ function(module, exports, __webpack_require__) {
                 }, _react2.default.createElement("input", {
                     ref: this._setInputRef,
                     type: "text",
-                    defaultValue: "http://",
                     placeholder: "https://example.com/",
                     className: _InputPopover2.default.input,
                     onKeyPress: this._onInputKeyPress

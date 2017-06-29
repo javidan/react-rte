@@ -226,8 +226,21 @@ export default class EditorToolbar extends Component {
     }
     this.setState({showLinkInput: !isShowing});
   }
+  
+  _formatUrl(url){
+    if (url.match(/http/g)) {
+      return url;
+    } else {
+      return `http://${url}`;
+    }
+  }
 
-  _setLink(url: string) {
+  _setLink(urlString: string) {
+
+    const url = this._formatUrl(urlString);
+
+
+
     let {editorState} = this.props;
     let selection = editorState.getSelection();
     let entityKey = Entity.create(ENTITY_TYPE.LINK, 'MUTABLE', {url, target: '_blank' });
