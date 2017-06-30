@@ -138,6 +138,7 @@ export default class EditorToolbar extends Component {
         onToggle={this._toggleInlineStyle}
         style={type.style}
         className={type.className}
+        ref={type.label.toLowerCase()}
       />
     ));
     return (
@@ -168,6 +169,7 @@ export default class EditorToolbar extends Component {
           isDisabled={!isCursorOnLink}
           onClick={this._removeLink}
           focusOnClick={false}
+          ref="removeLinkButton"
         />
       </ButtonGroup>
     );

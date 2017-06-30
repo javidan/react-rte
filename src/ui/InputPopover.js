@@ -48,6 +48,7 @@ export default class InputPopover extends Component {
             placeholder="https://example.com/"
             className={styles.input}
             onKeyPress={this._onInputKeyPress}
+            ref="linkInput"
           />
           <ButtonGroup className={styles.buttonGroup}>
             <IconButton

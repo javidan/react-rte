@@ -116,6 +116,7 @@ export default class RichTextEditor extends Component {
           onChange={this._onChange}
           focusEditor={this._focus}
           toolbarConfig={toolbarConfig}
+          ref="toolbar"
         />
       );
     }
