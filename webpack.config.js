@@ -1,6 +1,6 @@
 /*eslint-env node */
 var path = require('path');
-var webpack = require('webpack');
+var webpack = require("webpack")
 
 var loaders = [
   {
@@ -20,6 +20,17 @@ var loaders = [
 ];
 
 module.exports = [{
+  entry: {
+    demo: './src/demo.js',
+  },
+  output: {
+    path: path.join(__dirname, 'assets/dist'),
+    publicPath: '/',
+    filename: '[name].js',
+  },
+  module: {loaders: loaders},
+},
+{
   entry: './src/RichTextEditor.js',
   output: {
     path: path.join(__dirname, 'dist'),
@@ -46,11 +57,4 @@ module.exports = [{
       },
     }),
   ],
-}, {
-  entry: './src/demo.js',
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'demo.js',
-  },
-  module: {loaders: loaders},
 }];
