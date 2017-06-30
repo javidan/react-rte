@@ -1,17 +1,17 @@
+
 {
   "name": "react-rte",
-  "version": "0.11.28",
+  "version": "0.11.0-rev1",
   "description": "React Rich Text Editor",
   "main": "dist/react-rte.js",
   "scripts": {
     "build": "npm run build-lib && npm run build-dist",
     "build-dist": "rimraf dist && webpack",
-    "build-prod": "rimraf dist && webpack --config webpack.config.prod.js",
     "build-lib": "rimraf lib && babel src --ignore \"_*\" --out-dir lib",
     "lint": "eslint --max-warnings 0 .",
     "typecheck": "flow",
     "prepublish": "npm run build",
-    "start": "webpack-dev-server --content-base assets/",
+    "start": "webpack-dev-server --content-base assets/ --port 7070",
     "test": "npm run lint && npm run typecheck && npm run test-src",
     "test-src": "mocha \"src/**/__tests__/*.js\""
   },
@@ -27,8 +27,8 @@
     "immutable": "^3.8.1"
   },
   "peerDependencies": {
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react": "0.14.x || 15.x.x",
+    "react-dom": "0.14.x || 15.x.x"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
