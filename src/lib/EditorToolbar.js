@@ -230,6 +230,7 @@ export default class EditorToolbar extends Component {
   }
   
   _formatUrl(url){
+    debugger
     if (url.match(/http/g)) {
       return url;
     } else {

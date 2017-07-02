@@ -15669,14 +15669,6 @@ function(module, exports, __webpack_require__) {
             default: obj
         };
     }
-    function _defineProperty(obj, key, value) {
-        return key in obj ? Object.defineProperty(obj, key, {
-            value: value,
-            enumerable: !0,
-            configurable: !0,
-            writable: !0
-        }) : obj[key] = value, obj;
-    }
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
     }
@@ -15735,13 +15727,13 @@ function(module, exports, __webpack_require__) {
                     className: className
                 }, _react2.default.createElement("div", {
                     className: _InputPopover2.default.inner
-                }, _react2.default.createElement("input", _defineProperty({
+                }, _react2.default.createElement("input", {
                     ref: this._setInputRef,
                     type: "text",
                     placeholder: "https://example.com/",
                     className: _InputPopover2.default.input,
                     onKeyPress: this._onInputKeyPress
-                }, "ref", "linkInput")), _react2.default.createElement(_ButtonGroup2.default, {
+                }), _react2.default.createElement(_ButtonGroup2.default, {
                     className: _InputPopover2.default.buttonGroup
                 }, _react2.default.createElement(_IconButton2.default, {
                     label: "Cancel",
