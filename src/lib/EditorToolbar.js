@@ -231,7 +231,7 @@ export default class EditorToolbar extends Component {
   
   _formatUrl(url){
     debugger
-    if (url.match(/http/g)) {
+    if (url.match(/^(http|https)\:\/\//g)) {
       return url;
     } else {
       return `http://${url}`;

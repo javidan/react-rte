@@ -14842,7 +14842,7 @@ function(module, exports, __webpack_require__) {
         }, {
             key: "_formatUrl",
             value: function(url) {
-                return url.match(/http/g) ? url : "http://" + url;
+                return url.match(/^(http|https)\:\/\//g) ? url : "http://" + url;
             }
         }, {
             key: "_setLink",
